@@ -1,0 +1,46 @@
+# Project: proyectio_final
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = principal.o funciones.o abajo.o izquierda.o derecha.o arriba.o escenario.o
+LINKOBJ  = principal.o funciones.o abajo.o izquierda.o derecha.o arriba.o escenario.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32 -lwinmm -lbgi -lgdi32 -luser32 -m32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = proyectio_final.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+principal.o: principal.cpp
+	$(CPP) -c principal.cpp -o principal.o $(CXXFLAGS)
+
+funciones.o: funciones.cpp
+	$(CPP) -c funciones.cpp -o funciones.o $(CXXFLAGS)
+
+abajo.o: abajo.cpp
+	$(CPP) -c abajo.cpp -o abajo.o $(CXXFLAGS)
+
+izquierda.o: izquierda.cpp
+	$(CPP) -c izquierda.cpp -o izquierda.o $(CXXFLAGS)
+
+derecha.o: derecha.cpp
+	$(CPP) -c derecha.cpp -o derecha.o $(CXXFLAGS)
+
+arriba.o: arriba.cpp
+	$(CPP) -c arriba.cpp -o arriba.o $(CXXFLAGS)
+
+escenario.o: escenario.cpp
+	$(CPP) -c escenario.cpp -o escenario.o $(CXXFLAGS)
