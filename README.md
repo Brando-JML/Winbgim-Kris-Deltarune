@@ -1,2 +1,3 @@
 # Winbgim-Kris-Deltarune
-this project use the library winbgim for c++ and simulates the operation of a game using only the graphics library
+As a final project for the computer graphics course, seeking to create animations by creating custom functions.
+The C++ winbgim library is required to run it. 
